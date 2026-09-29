@@ -325,7 +325,7 @@ async def get_receipt_desc(update: Update, context: ContextTypes.DEFAULT_TYPE):
     return CHOOSING
 
 if __name__ == '__main__':
-    BOT_TOKEN = '8381801162:AAGljc2MGPja0TLLAq0LR3Oo27A0FaYCzbQ'
+    BOT_TOKEN = '8381801162:AAFw3opCNQ7YyhEDtia2nm-zCyLgJOC3GaY'
     app = ApplicationBuilder().token(BOT_TOKEN).build()
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler('start', start)],
