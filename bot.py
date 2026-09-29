@@ -349,4 +349,19 @@ if __name__ == '__main__':
     )
     app.add_handler(conv_handler)
     print('ربات با موفقیت به‌روزرسانی شد...')
-    app.run_polling()
+    from flask import Flask
+import threading
+import os
+
+app_web = Flask(__name__)
+
+@app_web.route('/')
+def home():
+    return "Bot is running!"
+
+def run_web():
+    port = int(os.environ.get("PORT", 10000))
+    app_web.run(host="0.0.0.0", port=port)
+# اجرای وب‌سرور در پس‌زمینه برای رندر
+threading.Thread(target=run_web).daemon = True
+app.run_polling()
